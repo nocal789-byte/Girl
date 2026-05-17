@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>For Anjali ✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2D142C;
+            background-image: linear-gradient(135deg, #2D142C 0%, #510A32 100%);
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .floating-element {
+            position: absolute;
+            bottom: -50px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            animation: floatUp 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.5) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-110vh) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 25px 20px;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+                        inset 0 0 25px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            max-width: 360px;
+            width: 88%;
+            transition: all 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            z-index: 10;
+            animation: cardEntrance 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes cardEntrance {
+            from { transform: translateY(30px) scale(0.95); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        h1 {
+            color: #FF165D;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 5px 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .heart-wrapper {
+            margin-bottom: 5px;
+        }
+
+        .heart {
+            font-size: 44px;
+            color: #FF165D;
+            animation: heartbeat 0.9s infinite alternate cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            to { transform: scale(1.18); }
+        }
+
+        .shayari {
+            font-weight: 600;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 15px 12px;
+            border-radius: 16px;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        p {
+            color: #eeeeee;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            height: 50px;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 38px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        #yesBtn {
+            background: linear-gradient(135deg, #FF165D, #ff407d);
+            color: white;
+            box-shadow: 0 6px 20px rgba(255, 22, 93, 0.3);
+        }
+
+        #yesBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 22, 93, 0.5);
+        }
+
+        #noBtn {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            color: white;
+            position: relative;
+            z-index: 20;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .success-message {
+            display: none;
+            font-size: 1.1rem;
+            color: #FF165D;
+            font-weight: 700;
+            animation: smoothFade 0.6s ease forwards;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .photo-container {
+            display: none;
+            position: relative;
+            width: 100%;
+            max-height: 55vh;
+            margin: 10px auto;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 4px solid white;
+            overflow: hidden;
+            animation: smoothFade 0.8s ease forwards;
+        }
+
+        .dono-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Perfect alignment set by you */
+        .precise-face-emoji {
+            position: absolute;
+            top: 15%;
+            left: 38%;
+            transform: translate(-50%, -50%);
+            font-size: 42px;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        @keyframes smoothFade {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<audio id="bgSong" src="Anjali.mp3" loop></audio>
+
+<div class="card" id="mainCard">
+    <div class="heart-wrapper"><div class="heart">❤️</div></div>
+    <h1>Hey Anjali...</h1>
+    
+    <div class="shayari" id="shayariSection">
+        "Hazaron se baatein, par sukoon bas ek tere naam mein hai,<br>
+        Main bhatka hua shayar, meri har ek subah teri shaam mein hai...<br>
+        Log dhoondte hain khuda ko mandir aur masjidon mein,<br>
+        Mera toh poora jahan bas teri ek muskaan mein hai."
+    </div>
+
+    <p id="mainText">
+        Bohot dino se socha tha ki tumse ye baat kahun... Tum jaisi bhi ho, ekdum perfect ho. Mujhe tumhari saari baatein bohot pyaari lagti hain. Kya tum hamesha mere saath rahogi?
+    </p>
+
+    <div class="photo-container" id="photoContainer">
+        <img src="Anjali&Me.png" alt="Hamari Photo" class="dono-photo">
+        <div class="precise-face-emoji">😉</div> 
+    </div>
+
+    <div class="btn-group" id="btnGroup">
+        <button id="yesBtn" onclick="accepted()">Yes</button>
+        <button id="noBtn" onmouseover="moveNoButton()" ontouchstart="moveNoButton()">No</button>
+    </div>
+
+    <div id="success" class="success-message">
+        Yessss! ❤️ Chalo ab zyada bhav mat khao, jaldi se mujhe Instagram par message karke batao kaisa laga! 🙂
+    </div>
+</div>
+
+<script>
+    const song = document.getElementById('bgSong');
+
+    function generateMagic() {
+        const body = document.body;
+        const elements = ['❤️', '✨', '🌸', '✨'];
+        
+        setInterval(() => {
+            const el = document.createElement('div');
+            el.className = 'floating-element';
+            el.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            el.style.fontSize = (Math.random() * 12 + 14) + 'px';
+            body.appendChild(el);
+            
+            setTimeout(() => { el.remove(); }, 8000);
+        }, 350);
+    }
+    generateMagic();
+
+    function moveNoButton() {
+        const noBtn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40);
+        
+        noBtn.style.position = 'fixed';
+        noBtn.style.left = x + 'px';
+        noBtn.style.top = y + 'px';
+    }
+
+    function accepted() {
+        document.getElementById('btnGroup').style.display = 'none';
+        document.getElementById('shayariSection').style.display = 'none';
+        document.getElementById('mainText').style.display = 'none';
+        
+        document.querySelector('h1').innerText = "Perfect! ❤️";
+        document.getElementById('photoContainer').style.display = 'block';
+        document.getElementById('success').style.display = 'block';
+        
+        song.volume = 0.4;
+        song.play().catch(error => {
+            console.log("Audio play failed: ", error);
+        });
+    }
+</script>
+
+</body>
+</html>
